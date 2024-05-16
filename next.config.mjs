@@ -1,7 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images:{domains:[
-        "www.investopedia.com"
+        "www.investopedia.com",
+        "themezinho.net"
     ]}
 };
 

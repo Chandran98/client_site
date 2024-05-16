@@ -1,36 +1,55 @@
+import Image from "next/image";
 import Slider from "../components/slider";
+import { FaHeart } from "react-icons/fa";
+import { MdOutlineMenu } from "react-icons/md";
+// import {  Sho} from "../components/section";
 
 export default function Home() {
   // const { scrollYProgress } = useScroll();
 
   return (
-    //     <div className="relative ">
-    //       {/* <SliderComponent/> */}
-    // {/*
-    //       <div className=" fixed inset-0 z-0 bg-gray-900"></div> */}
-    //       <Sliders/>
-    //       {/* <div className="relative  bg-yellow-200  "></div> */}
-    //       <div className=" h-screen  bg-white"></div>
-    //       <div className=" h-screen bg-cyan-200"></div>
-    //     </div>
-    // <div className="w-full    h-screen bg-gray-200  justify-center z-0 items-center" data-src="/slide01.jpg">
-    //   {/* <Sliders /> */}
+    <>
+      <Slider />
+      <div className="   bg-transparent">
+        <div className=" absolute top-0 p-6 flex w-screen items-start justify-between">
+          <Image
+            src="https://themezinho.net/verno/images/logo.png"
+            width={200}
+            height={200}
+            alt="Picture of the author"
+          />
+          <div className=" flex gap-3  items-center justify-center">
+            <div className=" text-white text-xl"> MENU</div>
+            <MdOutlineMenu className=" text-white text-2xl" />
+          </div>
+        </div>
+      </div>
+      <div id="about" className="h-screen bg-white">
+        <div className="flex flex-col w-1/3 ml-52 items-start justify-start pt-24">
+          <h1 className="text-8xl  font-bold text-center  mb-10">SHOWCASES</h1>
+          <h2 className="text-xl  text-gray-400">
+            We create digital experiences for brands communicating the unique
+            services provided to your customers. Creativity for us something
+            personal.
+          </h2>
+        </div>
 
-    //   <div className=" h-screen  bg-slate-500"> Menu</div>
+        <div className=" bg-cyan-300 h-screen"></div>
+        <img src={"/bg.jpg"} alt="#" className="  sticky top-0 z-0 w-screen h-screen" />
+        <div className=" bg-transparent h-screen">
 
-    //   <div className="h-screen absolute bg-cyan-500"> Menu</div>
+    
+          {/* <Image src={"/bg.jpg"} width={100} height={100} alt="#" /> */}
+        </div>
+        <div className=" bg-red-500 h-screen">
 
-    //   <div className="h-screen  bg-red-500"> Menu</div>
-    // </div>
-    <div>
-    <Slider />  <main className="relative z-10">
-        <section id="about" className="h-screen bg-gray-100">
-          <h1 className="text-4xl text-center pt-24">About Section</h1>
-        </section>
-        <section id="contact" className="h-screen bg-gray-200">
-          <h1 className="text-4xl text-center pt-24">Contact Section</h1>
-        </section>
-      </main>
-  </div>
+    
+{/* <Image src={"/bg.jpg"} width={100} height={100} alt="#" /> */}
+</div>
+      </div>
+      <div id="contact" className="h-screen bg-red-200">
+        <h1 className="text-4xl text-center pt-24">Contact div</h1>
+      </div>
+    </>
   );
 }
