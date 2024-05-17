@@ -56,7 +56,7 @@ const SliderComponent = () => {
         {...{
           dots: false,
           infinite: true,
-          variableWidth: true,
+          // variableWidth: true,
           arrows: false,
           speed: 2000,
           slidesToShow: 1,
