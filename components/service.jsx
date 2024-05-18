@@ -1,7 +1,10 @@
+"use client";
 import CountingNumber from "@/utils/animated_counter";
 import AnimateCounter from "@/utils/animated_counter";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { motion, useInView,useIsomorphicLayoutEffect } from "framer-motion";
+
 
 const Service = () => {
   const serviceData = [
@@ -30,6 +33,23 @@ const Service = () => {
         "The slide out menu came to life right with as a popular option for mobile    ",
     },
   ];
+  const [count, setCount] = useState(0);
+  const ref = useRef();
+  const inView= useInView(ref,{once:true});
+
+  useIsomorphicLayoutEffect(() => {
+if (!ref.current) {
+  return
+}
+
+    const interval = setInterval(() => {
+      if (count < 100) {
+        setCount(count + 1);
+      }
+    }, 20);
+
+    return () => clearInterval(interval);
+  }, [inView,ref,count]);
 
   return (
     <section className=" relative  text-center h-[120vh] bg-white">
@@ -41,17 +61,22 @@ const Service = () => {
         className=" object-none"
       /> */}
       <div className=" relative   py-36    flex px-20 items-center justify-center">
-        <div className=" flex flex-auto items-center justify-evenly">
+        <div ref={ref} className=" flex flex-auto items-center justify-evenly">
           <div className=" "></div>
           <div className=" ">
             <div>sfdsdffds</div>
-            <CountingNumber endValue={100} />
+    <motion.div ref={ref}
+      className="text-4xl font-bold text-center"
+      animate={{ scale: [1, 1.1, 1], duration: 5 }}
+    >
+      {count}
+    </motion.div>
+          {/* </div>  <div className=" ">
+            <div>sfdsdffds</div>
+            <CountingNumber ref={ ref} endValue={25} />
           </div>  <div className=" ">
             <div>sfdsdffds</div>
-            <CountingNumber endValue={25} />
-          </div>  <div className=" ">
-            <div>sfdsdffds</div>
-            <CountingNumber endValue={75  } />
+            <CountingNumber ref={ ref} endValue={75  } /> */}
           </div>
         </div>
         <div className=" flex-1 text-right   px-20 ">

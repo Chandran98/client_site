@@ -1,9 +1,20 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    images:{domains:[
-        "www.investopedia.com",
-        "themezinho.net"
-    ]}
+    images:{
+        remotePatterns: [
+            {
+              protocol: 'https',
+              hostname: 'www.investopedia.com',
+              pathname: '**',
+            },
+            {
+              protocol: 'https',
+              hostname: 'themezinho.net',
+              pathname: '**',
+            },
+          ],
+        
+    }
 };
 
 export default nextConfig;

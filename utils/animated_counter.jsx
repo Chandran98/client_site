@@ -43,7 +43,7 @@ const CountingNumber = ({ endValue }) => {
     }, 20);
 
     return () => clearInterval(interval);
-  }, [count, inView,endValue]);
+  }, [inView,count, endValue]);
 
   return (
     <motion.div ref={ref}
