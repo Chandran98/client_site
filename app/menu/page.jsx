@@ -36,8 +36,8 @@ const Menu = () => {
           </div>
         </div>
 
-        <div className=" relative mt-40   text-white px-24 flex">
-          <div className=" w-1/2 p-10 bg-red-400   items-center justify-center">
+        <div className="  mt-40   text-white px-24 flex">
+          <div className=" absolute top-1/2 left-1/2 w-1/2 p-10 justify-end mr-0">
             <div className=" text-[2rem] font-bold">ADDRESS</div>
             <div className=" w-1/2  text-2xl font-base">
               Boryissa Hymri Str. No : 126 Poxniaky Greenline Kiev - Ukraine
