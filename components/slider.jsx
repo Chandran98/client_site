@@ -96,10 +96,9 @@ const SliderComponent = () => {
 };
 
 const Slide = ({ key, animate, indexdata, image, text, subtext }) => {
-  console.log(`dfadfasf${indexdata} ${image} ${text} ${key} `);
   return (
     <div className="relative h-screen">
-      <img src={image} alt={text} className=" object-fill w-screen h-screen" />
+      <img src={image} alt={text} className=" object-fill  h-screen" />
       <div className="absolute pl-[10rem] top-0 text-start  w-full h-full flex flex-col items-start justify-center">
         <motion.h1
           initial="hidden"

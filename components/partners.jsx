@@ -14,8 +14,8 @@ const Partners = () => {
     "logo09.png",
   ];
   return (
-    <section className="relative  bg-white pt-10  justify-center flex ">
-      <div className=" flex flex-col items-center gap-3 mt-10">
+    <section className="relative  bg-white justify-center flex ">
+      <div className=" flex flex-col items-center gap-3">
         <span className=" text-xl">
           We offer the world’s leading brands premium digital solutions
         </span>

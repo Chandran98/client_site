@@ -3,8 +3,7 @@ import CountingNumber from "@/utils/animated_counter";
 import AnimateCounter from "@/utils/animated_counter";
 import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
-import { motion, useInView,useIsomorphicLayoutEffect } from "framer-motion";
-
+import { motion, useInView, useIsomorphicLayoutEffect } from "framer-motion";
 
 const Service = () => {
   const serviceData = [
@@ -35,12 +34,12 @@ const Service = () => {
   ];
   const [count, setCount] = useState(0);
   const ref = useRef();
-  const inView= useInView(ref,{once:true});
+  const inView = useInView(ref, { once: true });
 
   useIsomorphicLayoutEffect(() => {
-if (!ref.current) {
-  return
-}
+    if (!ref.current) {
+      return;
+    }
 
     const interval = setInterval(() => {
       if (count < 100) {
@@ -49,7 +48,7 @@ if (!ref.current) {
     }, 20);
 
     return () => clearInterval(interval);
-  }, [inView,ref,count]);
+  }, [inView, ref, count]);
 
   return (
     <section className=" relative  text-center h-[120vh] bg-white">
@@ -61,17 +60,40 @@ if (!ref.current) {
         className=" object-none"
       /> */}
       <div className=" relative   py-36    flex px-20 items-center justify-center">
-        <div ref={ref} className=" flex flex-auto items-center justify-evenly">
+        <div ref={ref} className=" flex  items-center justify-evenly">
           <div className=" "></div>
-          <div className=" ">
-            <div>sfdsdffds</div>
-    <motion.div ref={ref}
-      className="text-4xl font-bold text-center"
-      animate={{ scale: [1, 1.1, 1], duration: 5 }}
-    >
-      {count}
-    </motion.div>
-          {/* </div>  <div className=" ">
+          <div className=" flex  ">
+            <div className=" px-12 pb-5">
+              <Image src={"/awards01.png"} alt="#" width={100} height={100} />
+              <motion.div
+                ref={ref}
+                className="text-4xl font-bold pt-6 text-center"
+                animate={{ scale: [1, 1.1, 1], duration: 5 }}
+              >
+                {count} +
+              </motion.div>
+            </div>
+            <div className=" px-12 pb-5 ">
+              <Image src={"/awards02.png"} alt="#" width={80} height={80} />
+              <motion.div
+                ref={ref}
+                className="text-4xl pt-6 font-bold text-center"
+                animate={{ scale: [1, 1.1, 1], duration: 5 }}
+              >
+                {count} %
+              </motion.div>
+            </div>
+            <div className=" px-12 pb-5">
+              <Image src={"/awards03.png"} alt="#" width={80} height={80} />
+              <motion.div
+                ref={ref}
+                className="text-4xl pt-6 font-bold text-center"
+                animate={{ scale: [1, 1.1, 1], duration: 5 }}
+              >
+                {count} K
+              </motion.div>
+            </div>
+            {/* </div>  <div className=" ">
             <div>sfdsdffds</div>
             <CountingNumber ref={ ref} endValue={25} />
           </div>  <div className=" ">
@@ -79,11 +101,11 @@ if (!ref.current) {
             <CountingNumber ref={ ref} endValue={75  } /> */}
           </div>
         </div>
-        <div className=" flex-1 text-right   px-20 ">
-          <div className=" font-bold text-xl pb-6">
+        <div className=" flex-1 text-right  pl-48 pr-40 ">
+          <div className=" font-bold text-xl pb-4">
             REACH GOALS AND KEEP WORKING
           </div>
-          <div className=" text-gray-500  ">
+          <div className=" text-gray-500 text-lg  ">
             We split between creative strategies and digital experiences,
             finding strong messages and visual essence
           </div>
@@ -94,7 +116,7 @@ if (!ref.current) {
           return (
             <div
               key={i}
-              className={`relative flex flex-col py-36  ${
+              className={`relative flex flex-col py-28  ${
                 i === 3 ? "" : "border-r border-gray-400"
               } px-10 hover:bg-[#80868C]  text-white  items-center justify-center`}
             >

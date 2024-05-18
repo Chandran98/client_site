@@ -11,8 +11,13 @@ const nextConfig = {
               protocol: 'https',
               hostname: 'themezinho.net',
               pathname: '**',
+            },{
+              protocol: 'https',
+              hostname: 'source.unsplash.com',
+              pathname: '**',
             },
           ],
+         
         
     }
 };
