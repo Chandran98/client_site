@@ -3,6 +3,7 @@ import { Afacad } from "next/font/google";
 import "./globals.css";
 import { AnimatePresence } from "framer-motion";
 import PageTrans from ".././components/page_transistion";
+import ThemeProviders from "../providers/themeProviders";
 
 const inter = Afacad({ subsets: ["latin"] });
 
@@ -13,12 +14,14 @@ const inter = Afacad({ subsets: ["latin"] });
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <AnimatePresence mode="wait">
-          {children}
-          {/* <PageTrans>{children}</PageTrans> */}
-        </AnimatePresence>
+    <html lang="en" className={inter.className}>
+      <body className=" bg-gray-50 dark:bg-slate-800 ">
+        <ThemeProviders>
+          <AnimatePresence mode="wait">
+            
+            <PageTrans>{children}</PageTrans>
+          </AnimatePresence>
+        </ThemeProviders>
       </body>
     </html>
   );

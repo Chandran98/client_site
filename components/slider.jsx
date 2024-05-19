@@ -8,18 +8,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Image from "next/image";
 
-// const settings = {
-//   dots: false,
-//   infinite: true,
-
-//   speed: 500,
-//   slidesToShow: 1,
-//   slidesToScroll: 1,
-//   autoplay: true,
-//   autoplaySpeed: 3000,
-//   beforeChange: (current, next) => setAnimatingIndex(next),
-//   afterChange: (current) => setAnimatingIndex(null),
-// };
 
 const slideData = [
   {
@@ -31,20 +19,20 @@ const slideData = [
   {
     // image: "https://kairaaexchange.s3.amazonaws.com/image/1705225155005.jpg",
     image: "/slide02.jpg",
-    text: "BECOME DELUXE ",
-    subtext: "-Normal distribution of letters, as opposed",
+    text: "NEW ADVANCE ",
+    subtext: "-Inside any function component",
   },
   {
     // image: "https://kairaaexchange.s3.amazonaws.com/image/1700655698732.jpg",
     image: "/slide03.jpg",
     text: "BECOME DELUXE",
-    subtext: "-Normal distribution of letters, as opposed",
+    subtext: "-Empty object during prerendering if ",
   },
 ];
 
 const textVariants = {
-  hidden: { x: 0 },
-  visible: { x: 80 },
+  hidden: { x: 0 ,transition: { duration: 0.8, ease: "easeInOut" }   },
+  visible: { x: 80 ,transition: { duration: 0, ease: "easeInOut" }  },
 };
 
 const SliderComponent = () => {
@@ -69,7 +57,6 @@ const SliderComponent = () => {
         }}
       >
         {slideData.map((slide, i) => {
-          console.log(`dsfsf ${i} dfsadfsdf ${animated}`);
           return (
             <Slide
               key={i}
@@ -98,14 +85,14 @@ const SliderComponent = () => {
 const Slide = ({ key, animate, indexdata, image, text, subtext }) => {
   return (
     <div className="relative h-screen">
-      <img src={image} alt={text} className=" object-fill  h-screen" />
+      <img src={image} alt={text} className=" object-fill w-full  h-screen" />
       <div className="absolute pl-[10rem] top-0 text-start  w-full h-full flex flex-col items-start justify-center">
         <motion.h1
           initial="hidden"
           animate={animate === indexdata ? "visible" : "hidden"}
           variants={textVariants}
-          transition={{ duration: 0.2 }}
-          className=" items-start text-white text-4xl mb-7"
+          transition={{ duration: 0.5 }}
+          className=" items-start text-white text-6xl mb-7"
         >
           {subtext}
         </motion.h1>
@@ -113,8 +100,8 @@ const Slide = ({ key, animate, indexdata, image, text, subtext }) => {
           initial="hidden"
           animate={animate === indexdata ? "visible" : "hidden"}
           variants={textVariants}
-          transition={{ duration: 0.5 }}
-          className=" items-start  text-white w-2/5 text-9xl font-bold"
+          transition={{ duration: 0.8 }}
+          className=" items-start  text-white text-9xl font-bold"
         >
           {text}
         </motion.h2>

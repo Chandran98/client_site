@@ -15,7 +15,7 @@ const Partners = () => {
   ];
   return (
     <section className="relative  bg-white justify-center flex ">
-      <div className=" flex flex-col items-center gap-3">
+      <div className=" flex flex-col items-center gap-3 mt-6">
         <span className=" text-xl">
           We offer the world’s leading brands premium digital solutions
         </span>

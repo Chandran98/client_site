@@ -6,6 +6,7 @@ import React, { useEffect, useState,useRef } from "react";
 // import Image from "next/image";
 // import CountingNumber from "@/utils/animated_counter";
 import { useInView ,animate, useIsomorphicLayoutEffect} from "framer-motion";
+import ThemeSwitcher from "@/utils/themeSwitch";
 
 
 // function Counter({ from, to }) {
@@ -112,19 +113,22 @@ const about = () => {
 
 
     <>
-    <div className=" h-screen bg-cyan-200">
+    <div className=" h-screen bg-cyan-200 dark:bg-red-200">
     {/* <Counter from={0} to={65.4} /> */}
 
     {/* <span ref={ref} /> */}
+    <ThemeSwitcher/>
     </div>
-    <div className=" h-screen bg-red-200"></div>
+    <div className=" h-screen bg-red-200 dark:bg-green-200 dark:text-2xl ">
+      asdfdasfadf asfa
+    </div>
     <div className=" h-screen bg-green-200">
-
+asdsdfdsfs
     </div>
     <div className=" h-screen bg-yellow-200">
       <Mycniamte from={0} to={150}/>
     </div>
-    <div className=" h-screen bg-cyan-200"></div>
+    <div className=" h-screen bg-cyan-200">asdfadsfds</div>
   
     </>
   );
